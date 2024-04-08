@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Reddit+Mono:wght@200..900&display=swap');
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.linha-horizontal {
+    border-top: 1px solid #ccc;
+    margin: 20px auto;
+    width: 30%;
+}
+
+.botao {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #0056b3;
+}
+
+.botao:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+.botao-contorno {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+    background-color: transparent;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.botao-contorno:hover {
+    color: #0056b3;
+    border-color: #0056b3;
+}
+
+.botao-gradiente {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(to right, #ff4e50, #f9d423);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.botao-gradiente:hover {
+    background: linear-gradient(to right, #fc913a, #d4fc79);
+}
+
+.botao-3d {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px #3e8e41;
+}
+
+.botao-3d:hover {
+    background-color: #45a049;
+    box-shadow: 0 2px #3e8e41;
+    transform: translateY(2px);
+}
+
+.botao-3d:active {
+    background-color: #45a049;
+    box-shadow: 0 1px #3e8e41;
+    transform: translateY(4px);
+}
+
+.botao-icon {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-icon:hover {
+    background-color: #0056b3;
+}
+
+.botao-icon i {
+    margin-right: 5px;
+}
+
+.botao-preenchido {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.botao-preenchido::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: #007bff;
+    border-radius: 50%;
+    transition: all 0.6s ease;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+}
+
+.botao-preenchido:hover::before {
+    width: 0;
+    height: 0;
+}
+
+.botao-preenchido:hover {
+    color: #007bff;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.botao-preenchido:focus {
+    outline: none;
+}
+
+.botao-flutuante {
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    text-align: center;
+    line-height: 60px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botao-flutuante:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.botao-toggle input {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: background-color 0.3s ease;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.botao-rotativo {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: not-allowed;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.botao-rotativo .icone {
+    margin-right: 5px;
+    display: inline-block;
+    transition: transform 0.6s ease-in-out infinite;
+}
+
+.botao-rotativo:hover .icone {
+    animation-play-state: paused;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.botao-rotativo:hover .icone {
+    animation: spin 2s linear infinite;
+}
+
+.botao-borda-icon {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+    background-color: transparent;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.botao-borda-icon:hover {
+    color: #0056b3;
+    border-color: #0056b3;
+}
+
+.botao-borda-icon i {
+    margin-right: 5px;
+}
+
+.botao-sombra {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.671);
+    transition: transform 0.3s ease;
+}
+
+.botao-sombra:hover {
+    transform: translateY(-2px);
+}
+
+.botao-icone-direita {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-icone-direita:hover {
+    background-color: #0056b3;
+}
+
+.botao-icone-direita i {
+    margin-left: 5px;
+}
+
+.botao-zoom {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.botao-zoom:hover {
+    transform: scale(1.1);
+}
+
+.botao-negrito-maiusculo {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-negrito-maiusculo:hover {
+    background-color: #0056b3;
+}
+
